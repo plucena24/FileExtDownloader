@@ -90,7 +90,7 @@ def main():
     download_links = extract_links(extension_list,html)
     print("Downloading " + str(len(download_links)) + " files!")
 
-    thread_pool = Pool(processes=8)
+    thread_pool = Pool()
 
     results = [thread_pool.apply_async(download, (crawl_link,dir_to_store,dl_num, [download_link], download_links)) for dl_num, download_link in  enumerate(download_links)]
 
