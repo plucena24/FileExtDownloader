@@ -61,7 +61,7 @@ def extract_links(extensions,html):
           #clean the links that were found
           for i in range(len(valid_links)):
               valid_links[i] = valid_links[i].strip()
-              valid_links[i] = re.sub(clean_html,'',valid_links[i])
+              valid_links[i] = clean_html.sub('',valid_links[i])
               valid_links[i] = re.sub('<a*.*href=','',valid_links[i])
               valid_links[i] = valid_links[i].replace('"','')
               valid_links[i] = valid_links[i].replace('<a href=','')
